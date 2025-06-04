@@ -17,3 +17,13 @@ A simple Streamlit app template for you to modify!
    ```
    $ streamlit run streamlit_app.py
    ```
+
+### Windows Speech To-Do App
+
+The repository also contains `todo_app.py`, a small Tkinter based
+To‑Do application that allows you to add tasks via voice input using
+`speech_recognition`. To start it on Windows run:
+
+```bash
+python todo_app.py
+```
