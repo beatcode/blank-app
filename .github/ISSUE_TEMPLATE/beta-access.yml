@@ -1,50 +1,61 @@
-name: Beta access request
-description: Apply for the TrackLens private beta
-title: "Beta access: "
+name: Beta access request / Beta-Zugang
+description: Apply for the TrackLens private beta / Für die TrackLens Private Beta bewerben
+title: "Beta access / Beta-Zugang: "
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for your interest in TrackLens. Please do not include your email address or private project files here.
+        **English:** Thanks for your interest in TrackLens. Please do not include your email address or private project files here.
+
+        **Deutsch:** Danke für dein Interesse an TrackLens. Bitte keine E-Mail-Adresse und keine privaten Projektdateien hier einfügen.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Preferred language / Bevorzugte Sprache
+      options:
+        - Deutsch
+        - English
+    validations:
+      required: true
   - type: dropdown
     id: ableton
     attributes:
-      label: Ableton Live version
+      label: Ableton Live version / Ableton-Live-Version
       options:
         - Live 12
         - Live 11
-        - Other
+        - Other / Andere
     validations:
       required: true
   - type: dropdown
     id: os
     attributes:
-      label: Operating system
+      label: Operating system / Betriebssystem
       options:
         - Windows 11
         - Windows 10
         - macOS
-        - Other
+        - Other / Andere
     validations:
       required: true
   - type: input
     id: style
     attributes:
-      label: Main music style
+      label: Main music style / Haupt-Musikstil
       placeholder: Psy-Techno, Melodic Techno, House...
     validations:
       required: true
   - type: textarea
     id: problem
     attributes:
-      label: What is your biggest arrangement problem?
-      placeholder: Tell us where you tend to get stuck when finishing tracks.
+      label: Biggest arrangement problem / Grösstes Arrangement-Problem
+      description: Tell us where you tend to get stuck when finishing tracks. / Beschreibe, wo du beim Fertigstellen deiner Tracks typischerweise hängen bleibst.
     validations:
       required: true
   - type: checkboxes
     id: consent
     attributes:
-      label: Beta expectations
+      label: Beta expectations / Beta-Erwartungen
       options:
-        - label: I understand this is an early beta and I am willing to report problems.
+        - label: I understand this is an early beta and I am willing to report problems. / Ich verstehe, dass dies eine frühe Beta ist, und bin bereit, Probleme zu melden.
           required: true
