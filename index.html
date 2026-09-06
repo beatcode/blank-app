@@ -1,22 +1,222 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TrackLens — Ableton Arrangement Coach</title>
-<meta name="description" content="TrackLens analysiert Ableton-Live-Arrangements lokal und priorisiert konkrete Hörentscheidungen zu Dramaturgie, Mix, Frequenzraum und Pre-Master.">
+<meta name="description" content="TrackLens analysiert dein Ableton-Live-Arrangement lokal und priorisiert konkrete Hörentscheidungen zu Dramaturgie, Mix, Frequenzraum und Pre-Master.">
 <meta name="theme-color" content="#0b0d10">
-<style>
-:root{--bg:#0b0d10;--panel:#12161b;--panel2:#171c22;--text:#f5f7fa;--muted:#aeb6c2;--line:#2a313a;--line2:#37404b;--accent:#ffbf2f;--green:#76e69b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(900px 560px at 72% -12%,rgba(116,81,24,.28),transparent 64%),radial-gradient(700px 520px at -10% 38%,rgba(24,47,71,.16),transparent 67%),var(--bg);color:var(--text)}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}.wrap{width:min(1180px,92vw);margin:auto}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 0}.brand{display:flex;align-items:center;gap:9px;font-size:22px;font-weight:950;letter-spacing:-.035em}.beta{font-size:10px;color:#1b1305;background:var(--accent);padding:4px 7px;border-radius:999px;letter-spacing:.04em}.navright{display:flex;align-items:center;gap:10px}.lang{display:flex;padding:3px;border:1px solid var(--line);border-radius:10px;background:#11151a}.lang button{border:0;background:transparent;color:#919aa6;font-weight:850;font-size:12px;padding:7px 9px;border-radius:7px;cursor:pointer}.lang button.active{background:#262c34;color:#fff}.navcta,.cta{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;font-weight:850}.navcta{padding:10px 14px;border:1px solid var(--line2);background:#15191f}.hero{padding:44px 0 48px}.heroCopy{text-align:center;max-width:920px;margin:auto}.eyebrow,.kicker{color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.15em;text-transform:uppercase}h1{font-size:clamp(48px,7vw,86px);line-height:.96;letter-spacing:-.06em;margin:16px auto 18px;max-width:980px}.lead{font-size:20px;line-height:1.58;color:var(--muted);max-width:800px;margin:0 auto}.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}.cta{padding:15px 20px;background:var(--accent);color:#171109;border:1px solid var(--accent)}.cta.secondary{background:#15191f;color:var(--text);border-color:var(--line2)}.trust{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:24px}.pill{border:1px solid var(--line);background:#11151a;color:#c7ced7;border-radius:999px;padding:7px 10px;font-size:12px}.shot,.productShot{background:#11151a;border:1px solid #303741;border-radius:18px;padding:9px;box-shadow:0 24px 70px rgba(0,0,0,.35)}.heroShot{margin:42px auto 0;max-width:1040px}.shot img,.productShot img{border-radius:11px;width:100%}.caption{color:#8f99a5;font-size:12px;line-height:1.5;margin:10px 5px 2px}section{padding:76px 0}.sectionHead{max-width:780px}h2{font-size:clamp(34px,4.6vw,58px);letter-spacing:-.048em;line-height:1.04;margin:12px 0 15px}.sub{color:var(--muted);font-size:18px;max-width:760px;line-height:1.58}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.card{background:linear-gradient(180deg,#171b21,#11151a);border:1px solid var(--line);border-radius:16px;padding:24px}.num{font-size:12px;color:var(--accent);font-weight:950;letter-spacing:.1em}.card h3{font-size:22px;margin:13px 0 8px}.card p,.feature p{color:var(--muted);line-height:1.58;margin:0}.feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}.feature.reverse{grid-template-columns:1.1fr .9fr}.feature.reverse .copy{order:2}.feature.reverse .productShot{order:1}.feature h3{font-size:clamp(30px,3.8vw,46px);letter-spacing:-.04em;line-height:1.05;margin:12px 0 14px}.points{display:grid;gap:10px;margin-top:20px}.point{display:flex;gap:11px;align-items:flex-start;color:#d7dde5;line-height:1.48}.point b{color:var(--accent)}.coach{margin-top:22px;padding:17px;border:1px solid #56451d;background:linear-gradient(135deg,#1b160d,#11151a);border-radius:15px}.coach span{display:block;color:var(--muted);font-size:14px;line-height:1.5;margin-top:5px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}.step{padding:20px;border-top:2px solid #39414c;background:rgba(17,21,26,.58);border-radius:0 0 12px 12px}.step strong{display:block;margin-bottom:7px}.step span{color:var(--muted);font-size:14px;line-height:1.48}.safe{display:grid;grid-template-columns:1fr 1fr;gap:26px}.safeBox{background:#101b14;border:1px solid #244c31;border-radius:18px;padding:28px}.safeBox h3{font-size:27px;margin:0 0 14px}.check{display:flex;gap:10px;margin:13px 0;color:#c9d8ce;line-height:1.45}.check b{color:var(--green)}.limit{margin-top:18px;background:#15191f;border:1px solid var(--line);border-radius:18px;padding:24px}.limit p{color:var(--muted);line-height:1.55}.betaBox{background:linear-gradient(135deg,#19150d,#11151a 62%);border:1px solid #4a3914;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}.slots{font-size:60px;font-weight:950;letter-spacing:-.05em;color:var(--accent)}.muted{color:var(--muted)}.small{font-size:13px;line-height:1.55}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.badge{border:1px solid var(--line);padding:7px 9px;border-radius:9px;color:#bdc5ce;background:#11151a;font-size:12px}footer{border-top:1px solid var(--line);padding:30px 0 44px;color:#848d99;font-size:12px;line-height:1.65}@media(max-width:900px){.feature,.feature.reverse,.safe,.betaBox{grid-template-columns:1fr}.feature.reverse .copy,.feature.reverse .productShot{order:initial}.grid3{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}@media(max-width:580px){.flow{grid-template-columns:1fr}.navcta{display:none}h1{font-size:48px}.brand{font-size:19px}.beta{display:none}section{padding:58px 0}}
-</style>
-</head><body><div class="wrap">
-<nav><div class="brand">TrackLens <span class="beta">PRIVATE BETA</span></div><div class="navright"><div class="lang"><button id="de" onclick="setLang('de')">DE</button><button id="en" onclick="setLang('en')">EN</button></div><a class="navcta" href="#beta" data-de="Beta-Zugang" data-en="Beta access">Beta-Zugang</a></div></nav>
-<header class="hero"><div class="heroCopy"><div class="eyebrow" data-de="Producer-Coaching für Ableton Live" data-en="Producer coaching for Ableton Live">Producer-Coaching für Ableton Live</div><h1 data-de="Hör die Stellen, die deinen Track wirklich weiterbringen." data-en="Hear the places that actually move your track forward.">Hör die Stellen, die deinen Track wirklich weiterbringen.</h1><p class="lead" data-de="TrackLens analysiert Arrangement, relative Pegel und Frequenzbelegung lokal und priorisiert daraus konkrete Hörentscheidungen — mit A/B-Ideen und direktem Sprung zur relevanten Stelle in Ableton." data-en="TrackLens analyzes arrangement, relative levels and frequency occupancy locally, then prioritizes concrete listening decisions — with A/B ideas and direct navigation to the relevant place in Ableton.">TrackLens analysiert Arrangement, relative Pegel und Frequenzbelegung lokal und priorisiert daraus konkrete Hörentscheidungen — mit A/B-Ideen und direktem Sprung zur relevanten Stelle in Ableton.</p><div class="actions"><a class="cta" href="#beta" data-de="Private Beta anfragen" data-en="Request private beta">Private Beta anfragen</a><a class="cta secondary" href="#product" data-de="Produkt ansehen" data-en="See the product">Produkt ansehen</a></div><div class="trust"><span class="pill" data-de="● Lokal analysiert" data-en="● Local analysis">● Lokal analysiert</span><span class="pill" data-de="Read-only im Analysepfad" data-en="Read-only analysis path">Read-only im Analysepfad</span><span class="pill" data-de="Kein Projekt-Upload" data-en="No project upload">Kein Projekt-Upload</span><span class="pill">Windows · Ableton Live 12</span></div></div><figure class="shot heroShot"><img src="assets/overview.webp" alt="TrackLens Producer overview"><figcaption class="caption" data-de="Producer-Übersicht: zuerst die wichtigsten Hörentscheidungen statt Analyse-Rohdaten." data-en="Producer overview: the most important listening decisions come before raw analysis data.">Producer-Übersicht: zuerst die wichtigsten Hörentscheidungen statt Analyse-Rohdaten.</figcaption></figure></header>
-<section id="product"><div class="sectionHead"><div class="kicker" data-de="Was der Coach anders macht" data-en="What the coach does differently">Was der Coach anders macht</div><h2 data-de="Nicht mehr Daten. Bessere Entscheidungen." data-en="Not more data. Better decisions.">Nicht mehr Daten. Bessere Entscheidungen.</h2><p class="sub" data-de="TrackLens versucht nicht, deinen Track automatisch zu verbessern. Der Coach sammelt lokale Evidenz und verdichtet sie zu wenigen Fragen, die du mit deinen Ohren entscheidest." data-en="TrackLens does not try to automatically improve your track. It gathers local evidence and turns it into a small number of questions that you decide with your ears.">TrackLens versucht nicht, deinen Track automatisch zu verbessern. Der Coach sammelt lokale Evidenz und verdichtet sie zu wenigen Fragen, die du mit deinen Ohren entscheidest.</p></div><div class="grid3"><article class="card"><div class="num">01 — PRIORISIEREN</div><h3 data-de="Was ist jetzt wichtig?" data-en="What matters now?">Was ist jetzt wichtig?</h3><p data-de="Mix, Vordergrund und Dramaturgie werden gemeinsam priorisiert. Technische Rohdaten bleiben im Detail-Tab." data-en="Mix, foreground and dramaturgy are prioritized together. Technical raw data stays in Details.">Mix, Vordergrund und Dramaturgie werden gemeinsam priorisiert. Technische Rohdaten bleiben im Detail-Tab.</p></article><article class="card"><div class="num">02 — HÖREN</div><h3 data-de="Konkretes Hörziel statt Regel." data-en="A listening goal, not a rule.">Konkretes Hörziel statt Regel.</h3><p data-de="Relevante Tipps erklären Warum, Hörziel und eine reversible A/B-Variante." data-en="Relevant tips explain why, what to listen for and a reversible A/B variation.">Relevante Tipps erklären Warum, Hörziel und eine reversible A/B-Variante.</p></article><article class="card"><div class="num">03 — ENTSCHEIDEN</div><h3 data-de="Du bleibst Producer." data-en="You stay the producer.">Du bleibst Producer.</h3><p data-de="Keine Qualitätsnote und keine automatische Musikänderung. TrackLens zeigt Optionen — du entscheidest." data-en="No quality score and no automatic music changes. TrackLens shows options — you decide.">Keine Qualitätsnote und keine automatische Musikänderung. TrackLens zeigt Optionen — du entscheidest.</p></article></div></section>
-<section><div class="feature"><div class="copy"><div class="kicker" data-de="Arrangement & Dramaturgie" data-en="Arrangement & dramaturgy">Arrangement & Dramaturgie</div><h3 data-de="Sieh den Spannungsbogen als Song — nicht als Liste von Clips." data-en="See the tension arc as a song — not a list of clips.">Sieh den Spannungsbogen als Song — nicht als Liste von Clips.</h3><p data-de="Der Coach erkennt Makrophasen aus dem tatsächlichen Arrangement, hält kleine Layerwechsel als Mikrovariationen fest und legt Energieverlauf und Genre-Profil daneben. Notes- und Review-Spuren sind keine Phasen-Wahrheit." data-en="The coach detects macro phases from the actual arrangement, keeps smaller layer changes as micro-variations and places energy flow and genre profile next to them. Notes and review tracks are not phase truth.">Der Coach erkennt Makrophasen aus dem tatsächlichen Arrangement, hält kleine Layerwechsel als Mikrovariationen fest und legt Energieverlauf und Genre-Profil daneben. Notes- und Review-Spuren sind keine Phasen-Wahrheit.</p><div class="points"><div class="point"><b>✓</b><span data-de="Makrophasen, Energie und Mikrovariationen auf einen Blick" data-en="Macro phases, energy and micro-variations at a glance">Makrophasen, Energie und Mikrovariationen auf einen Blick</span></div><div class="point"><b>✓</b><span data-de="Genre-Profil als Referenz mit Toleranzen — nicht als starre Regel" data-en="Genre profile as a tolerant reference — not a rigid rule">Genre-Profil als Referenz mit Toleranzen — nicht als starre Regel</span></div><div class="point"><b>✓</b><span data-de="Nur hörrelevante Übergänge werden als Entscheidung hochgezogen" data-en="Only listening-relevant transitions are promoted to decisions">Nur hörrelevante Übergänge werden als Entscheidung hochgezogen</span></div></div></div><figure class="productShot"><img src="assets/arrangement.webp" alt="TrackLens arrangement view"></figure></div></section>
-<section><div class="feature reverse"><div class="copy"><div class="kicker" data-de="Mix & Frequenzraum" data-en="Mix & frequency space">Mix & Frequenzraum</div><h3 data-de="Masking nicht nur sehen — als Hörentscheidung formulieren." data-en="Turn masking into a listening decision, not just a graph.">Masking nicht nur sehen — als Hörentscheidung formulieren.</h3><p data-de="Relative Pegel- und Spektrummessungen werden pro Songphase ausgewertet. Wenn zwei Elemente konkurrieren, zeigt TrackLens die konkrete Stelle und fragt, welcher Track dort führen soll." data-en="Relative level and spectrum measurements are evaluated per song phase. When two elements compete, TrackLens shows the exact place and asks which track should lead there.">Relative Pegel- und Spektrummessungen werden pro Songphase ausgewertet. Wenn zwei Elemente konkurrieren, zeigt TrackLens die konkrete Stelle und fragt, welcher Track dort führen soll.</p><div class="points"><div class="point"><b>✓</b><span data-de="Frequenzbelegung pro Abschnitt statt einer statischen Kurve" data-en="Frequency occupancy per section instead of one static curve">Frequenzbelegung pro Abschnitt statt einer statischen Kurve</span></div><div class="point"><b>✓</b><span data-de="Konflikte an konkrete Tracks und Zeitbereiche gebunden" data-en="Conflicts tied to concrete tracks and time ranges">Konflikte an konkrete Tracks und Zeitbereiche gebunden</span></div><div class="point"><b>✓</b><span data-de="Anhören, A/B starten und direkt in Ableton springen" data-en="Listen, start A/B and jump directly into Ableton">Anhören, A/B starten und direkt in Ableton springen</span></div></div><div class="coach"><strong data-de="Beispiel-Coaching" data-en="Coaching example">Beispiel-Coaching</strong><span data-de="Trilian mid und Trilian sub konkurrieren bei 90–250 Hz. Entscheide, welcher Track in dieser Phase die Führung haben soll." data-en="Trilian mid and Trilian sub compete at 90–250 Hz. Decide which track should lead in this phase.">Trilian mid und Trilian sub konkurrieren bei 90–250 Hz. Entscheide, welcher Track in dieser Phase die Führung haben soll.</span></div></div><figure class="productShot"><img src="assets/mix.webp" alt="TrackLens mix and frequency view"></figure></div></section>
-<section><div class="feature"><div class="copy"><div class="kicker" data-de="Pre-Master & Export-Check" data-en="Pre-master & export check">Pre-Master & Export-Check</div><h3 data-de="Vor dem Export wissen, was du noch bewusst prüfen solltest." data-en="Know what you still need to consciously check before export.">Vor dem Export wissen, was du noch bewusst prüfen solltest.</h3><p data-de="TrackLens nutzt relative Live-Messungen für einen hörbasierten Pre-Master-Check. Es behauptet bewusst nicht, LUFS, True Peak oder Release-Readiness zu messen, wenn dafür kein echter Mastering-Meter vorhanden ist." data-en="TrackLens uses relative Live measurements for a listening-based pre-master check. It deliberately does not claim LUFS, True Peak or release readiness without a proper mastering meter.">TrackLens nutzt relative Live-Messungen für einen hörbasierten Pre-Master-Check. Es behauptet bewusst nicht, LUFS, True Peak oder Release-Readiness zu messen, wenn dafür kein echter Mastering-Meter vorhanden ist.</p><div class="points"><div class="point"><b>✓</b><span data-de="Relative Peak-Präsenz und FX-/Bus-Kandidaten" data-en="Relative peak presence and FX/bus candidates">Relative Peak-Präsenz und FX-/Bus-Kandidaten</span></div><div class="point"><b>✓</b><span data-de="Limiter-, Mono-/Low-End- und Referenz-Checks als Hörliste" data-en="Limiter, mono/low-end and reference checks as a listening list">Limiter-, Mono-/Low-End- und Referenz-Checks als Hörliste</span></div><div class="point"><b>✓</b><span data-de="Keine falsche LUFS- oder True-Peak-Freigabe" data-en="No fake LUFS or True-Peak approval">Keine falsche LUFS- oder True-Peak-Freigabe</span></div></div></div><figure class="productShot"><img src="assets/premaster.webp" alt="TrackLens pre-master view"></figure></div></section>
-<section id="how"><div class="sectionHead"><div class="kicker">Workflow</div><h2 data-de="Vom Live Set zur nächsten Hörentscheidung." data-en="From the Live Set to the next listening decision.">Vom Live Set zur nächsten Hörentscheidung.</h2></div><div class="flow"><div class="step"><strong data-de="1. Arrangement prüfen" data-en="1. Review arrangement">1. Arrangement prüfen</strong><span data-de="Clips, Rollen, Phasengrenzen und strukturelle Veränderungen lokal lesen." data-en="Read clips, roles, phase boundaries and structural changes locally.">Clips, Rollen, Phasengrenzen und strukturelle Veränderungen lokal lesen.</span></div><div class="step"><strong data-de="2. Pegel + Spektrum messen" data-en="2. Measure level + spectrum">2. Pegel + Spektrum messen</strong><span data-de="Relevanten Songbereich abspielen und reale relative Trackdaten erfassen." data-en="Play the relevant song range and capture real relative track data.">Relevanten Songbereich abspielen und reale relative Trackdaten erfassen.</span></div><div class="step"><strong data-de="3. Prioritäten hören" data-en="3. Hear priorities">3. Prioritäten hören</strong><span data-de="Die wichtigsten Mix-, Fokus- und Dramaturgie-Fragen zuerst prüfen." data-en="Review the most important mix, focus and dramaturgy questions first.">Die wichtigsten Mix-, Fokus- und Dramaturgie-Fragen zuerst prüfen.</span></div><div class="step"><strong data-de="4. A/B in Ableton" data-en="4. A/B in Ableton">4. A/B in Ableton</strong><span data-de="Zur Stelle springen, vergleichen und nur bewusst bestätigte Änderungen anwenden." data-en="Jump to the exact place, compare and only apply changes you explicitly confirm.">Zur Stelle springen, vergleichen und nur bewusst bestätigte Änderungen anwenden.</span></div></div></section>
-<section><div class="safe"><div><div class="kicker" data-de="Sicherheitsprinzip" data-en="Safety principle">Sicherheitsprinzip</div><h2 data-de="Analyse ohne Kontrollverlust." data-en="Analysis without losing control.">Analyse ohne Kontrollverlust.</h2><p class="sub" data-de="Der Analysepfad ist lokal, deterministisch und read-only. TrackLens navigiert und misst, aber verändert nicht stillschweigend deine Musik." data-en="The analysis path is local, deterministic and read-only. TrackLens can navigate and measure, but does not silently change your music.">Der Analysepfad ist lokal, deterministisch und read-only. TrackLens navigiert und misst, aber verändert nicht stillschweigend deine Musik.</p></div><div class="safeBox"><h3>Local · Read-only default · Deterministic</h3><div class="check"><b>✓</b><span data-de="Clips, MIDI, Devices, Automation und Mixerwerte bleiben im Analysepfad unangetastet." data-en="Clips, MIDI, devices, automation and mixer values remain untouched in the analysis path.">Clips, MIDI, Devices, Automation und Mixerwerte bleiben im Analysepfad unangetastet.</span></div><div class="check"><b>✓</b><span data-de="Navigation darf Ansicht, Track-Auswahl, Playhead, Loop und Transport bewegen." data-en="Navigation may move view, track selection, playhead, loop and transport.">Navigation darf Ansicht, Track-Auswahl, Playhead, Loop und Transport bewegen.</span></div><div class="check"><b>✓</b><span data-de="Housekeeping und Coach Gain schreiben nur nach expliziter Bestätigung." data-en="Housekeeping and Coach Gain write only after explicit confirmation.">Housekeeping und Coach Gain schreiben nur nach expliziter Bestätigung.</span></div><div class="check"><b>✓</b><span data-de="Keine Cloud-Pflicht und kein Upload des Live Sets für die Analyse." data-en="No cloud requirement and no Live Set upload for analysis.">Keine Cloud-Pflicht und kein Upload des Live Sets für die Analyse.</span></div></div></div><div class="limit"><strong data-de="Was TrackLens bewusst nicht vorgibt" data-en="What TrackLens deliberately does not pretend">Was TrackLens bewusst nicht vorgibt</strong><p data-de="Kein ‚dein Track ist 82/100‘, keine starre Genre-Schablone und keine Mastering-Freigabe aus ungeeigneten Messwerten. Evidenz, Unsicherheit und Hörentscheidungen bleiben getrennt." data-en="No ‘your track is 82/100’, no rigid genre template and no mastering approval from unsuitable measurements. Evidence, uncertainty and listening decisions stay separate.">Kein ‚dein Track ist 82/100‘, keine starre Genre-Schablone und keine Mastering-Freigabe aus ungeeigneten Messwerten. Evidenz, Unsicherheit und Hörentscheidungen bleiben getrennt.</p></div></section>
-<section id="beta"><div class="betaBox"><div><div class="kicker">Private Beta</div><h2 data-de="Teste TrackLens mit echten Projekten." data-en="Test TrackLens on real projects.">Teste TrackLens mit echten Projekten.</h2><p class="sub" data-de="Gesucht sind Ableton-Produzent:innen, die den Coach an realen unfertigen Tracks testen und melden, welche Empfehlungen hilfreich, falsch oder unnötig sind." data-en="We are looking for Ableton producers willing to run the coach on real unfinished tracks and report which recommendations are useful, wrong or unnecessary.">Gesucht sind Ableton-Produzent:innen, die den Coach an realen unfertigen Tracks testen und melden, welche Empfehlungen hilfreich, falsch oder unnötig sind.</p><p class="muted small" data-de="Aktuell am besten geeignet: elektronische Musik, Windows 10/11 und Ableton Live 12. Der Beta-Zugang ist während der ersten Validierungsrunde kostenlos." data-en="Best fit right now: electronic music, Windows 10/11 and Ableton Live 12. Beta access is free during the first validation round.">Aktuell am besten geeignet: elektronische Musik, Windows 10/11 und Ableton Live 12. Der Beta-Zugang ist während der ersten Validierungsrunde kostenlos.</p><div class="badges"><span class="badge">Arrangement</span><span class="badge">Mix & Masking</span><span class="badge">Pre-Master</span><span class="badge">Housekeeping</span></div><div class="actions" style="justify-content:flex-start"><a class="cta" href="https://github.com/beatcode/blank-app/issues/new?template=beta-access.yml" data-de="Beta-Zugang anfragen" data-en="Request beta access">Beta-Zugang anfragen</a></div></div><div><div class="slots">30</div><strong data-de="Founding-Beta-Plätze" data-en="founding beta places">Founding-Beta-Plätze</strong><p class="muted small" data-de="Anfragen laufen in dieser technischen Beta über GitHub. Bitte keine E-Mail-Adresse oder privaten Projektdateien in das öffentliche Issue schreiben." data-en="Applications are handled through GitHub for this technical beta. Do not post your email address or private project files in the public issue.">Anfragen laufen in dieser technischen Beta über GitHub. Bitte keine E-Mail-Adresse oder privaten Projektdateien in das öffentliche Issue schreiben.</p></div></div></section>
-<footer><strong>TrackLens</strong> <span data-de="ist ein unabhängiges Produkt und weder mit Ableton AG verbunden noch von Ableton AG unterstützt. Ableton und Live sind Marken der Ableton AG. Produktname, Funktionen und Beta-Umfang können sich während der Validierung ändern." data-en="is an independent product and is not affiliated with or endorsed by Ableton AG. Ableton and Live are trademarks of Ableton AG. Product name, features and beta scope may change during validation.">ist ein unabhängiges Produkt und weder mit Ableton AG verbunden noch von Ableton AG unterstützt. Ableton und Live sind Marken der Ableton AG. Produktname, Funktionen und Beta-Umfang können sich während der Validierung ändern.</span></footer></div>
-<script>function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-'+l+']').forEach(e=>e.textContent=e.getAttribute('data-'+l));document.getElementById('de').classList.toggle('active',l==='de');document.getElementById('en').classList.toggle('active',l==='en');try{localStorage.setItem('tracklens-lang',l)}catch(e){}}let L='de';try{let s=localStorage.getItem('tracklens-lang');L=(s==='de'||s==='en')?s:((navigator.language||'de').toLowerCase().startsWith('de')?'de':'en')}catch(e){}setLang(L)</script></body></html>
+<meta property="og:title" content="TrackLens — Ableton Arrangement Coach">
+<meta property="og:description" content="Lokaler Producer-Coach für Arrangement, Mix & Frequenzraum in Ableton Live.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/site.css?v=2">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="brand">TrackLens <span class="beta" data-i18n="privateBeta">PRIVATE BETA</span></div>
+  <div class="navright">
+    <div class="lang" aria-label="Language">
+      <button id="lang-de" type="button" onclick="setLang('de')">DE</button>
+      <button id="lang-en" type="button" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="navcta" href="#beta" data-i18n="navCta">Beta-Zugang</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="heroCopy">
+    <div class="eyebrow" data-i18n="eyebrow">Producer-Coaching für Ableton Live</div>
+    <h1 data-i18n="heroTitle">Hör die Stellen, die deinen Track wirklich weiterbringen.</h1>
+    <p class="lead" data-i18n="heroLead">TrackLens analysiert Arrangement, relative Pegel und Frequenzbelegung lokal und priorisiert daraus konkrete Hörentscheidungen — mit A/B-Ideen und direktem Sprung zur relevanten Stelle in Ableton.</p>
+    <div class="actions">
+      <a class="cta" href="#beta" data-i18n="heroCta">Private Beta anfragen</a>
+      <a class="cta secondary" href="#product" data-i18n="seeProduct">Produkt ansehen</a>
+    </div>
+    <div class="trust">
+      <span class="pill" data-i18n="trustLocal">● Lokal analysiert</span>
+      <span class="pill" data-i18n="trustRead">Read-only im Analysepfad</span>
+      <span class="pill" data-i18n="trustNoUpload">Kein Projekt-Upload</span>
+      <span class="pill" data-i18n="trustWin">Windows Beta · Ableton Live 12</span>
+    </div>
+  </div>
+  <figure class="heroShot">
+    <img src="assets/overview.webp" alt="TrackLens Producer-Übersicht mit drei priorisierten Entscheidungen" loading="eager">
+    <figcaption class="caption" data-i18n="overviewCaption">Producer-Übersicht: statt Analyse-Rohdaten zuerst die drei wichtigsten Hörentscheidungen.</figcaption>
+  </figure>
+</header>
+
+<section id="product">
+  <div class="sectionHead">
+    <div class="section-kicker" data-i18n="promiseKicker">Was der Coach anders macht</div>
+    <h2 data-i18n="promiseTitle">Nicht mehr Daten. Bessere Entscheidungen.</h2>
+    <p class="sub" data-i18n="promiseSub">TrackLens versucht nicht, deinen Track automatisch „zu verbessern“. Der Coach sammelt lokale Evidenz und verdichtet sie zu wenigen Fragen, die du mit deinen Ohren entscheidest.</p>
+  </div>
+  <div class="grid3">
+    <article class="card">
+      <div class="num" data-i18n="card1Num">01 — PRIORISIEREN</div>
+      <h3 data-i18n="card1Title">Was ist jetzt wichtig?</h3>
+      <p data-i18n="card1Text">Mix, Vordergrund und Dramaturgie werden gemeinsam priorisiert. Technische Rohdaten bleiben im Detail-Tab.</p>
+    </article>
+    <article class="card">
+      <div class="num" data-i18n="card2Num">02 — HÖREN</div>
+      <h3 data-i18n="card2Title">Konkretes Hörziel statt Regel.</h3>
+      <p data-i18n="card2Text">Jeder relevante Tipp erklärt warum er auftaucht, worauf du hören sollst und welche reversible A/B-Variante du testen kannst.</p>
+    </article>
+    <article class="card">
+      <div class="num" data-i18n="card3Num">03 — ENTSCHEIDEN</div>
+      <h3 data-i18n="card3Title">Du bleibst Producer.</h3>
+      <p data-i18n="card3Text">Keine Qualitätsnote und keine automatische Musikänderung. TrackLens zeigt Optionen — du entscheidest, ob der Kontrast, Fokus oder Mix wirklich besser wird.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="feature">
+    <div class="featureCopy">
+      <div class="section-kicker" data-i18n="arrKicker">Arrangement & Dramaturgie</div>
+      <h3 data-i18n="arrTitle">Sieh den Spannungsbogen als Song — nicht als Liste von Clips.</h3>
+      <p data-i18n="arrText">Der Coach erkennt Makrophasen aus dem tatsächlichen Arrangement, hält kleine Layerwechsel als Mikrovariationen fest und legt Energieverlauf und Genre-Profil daneben. Notes- und Review-Spuren sind keine Phasen-Wahrheit.</p>
+      <div class="points">
+        <div class="point"><b>✓</b><span data-i18n="arrP1">Makrophasen, Energie und Mikrovariationen auf einen Blick</span></div>
+        <div class="point"><b>✓</b><span data-i18n="arrP2">Genre-Profil als Referenz mit Toleranzen — nicht als starre Regel</span></div>
+        <div class="point"><b>✓</b><span data-i18n="arrP3">Nur hörrelevante Übergänge werden als Entscheidung hochgezogen</span></div>
+      </div>
+    </div>
+    <figure class="productShot">
+      <img src="assets/arrangement.webp" alt="TrackLens Arrangement-Ansicht mit Energieverlauf, Makrophasen und Genre-Profil" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="feature reverse">
+    <div class="featureCopy">
+      <div class="section-kicker" data-i18n="mixKicker">Mix & Frequenzraum</div>
+      <h3 data-i18n="mixTitle">Masking nicht nur sehen — als Hörentscheidung formulieren.</h3>
+      <p data-i18n="mixText">Relative Pegel- und Spektrummessungen werden pro Songphase ausgewertet. Wenn zwei Elemente im relevanten Bereich konkurrieren, zeigt TrackLens die konkrete Stelle und fragt, welcher Track dort führen soll.</p>
+      <div class="points">
+        <div class="point"><b>✓</b><span data-i18n="mixP1">Frequenzbelegung pro Abschnitt statt einer einzigen statischen Kurve</span></div>
+        <div class="point"><b>✓</b><span data-i18n="mixP2">Konflikte werden an konkrete Tracks und Zeitbereiche gebunden</span></div>
+        <div class="point"><b>✓</b><span data-i18n="mixP3">Anhören, A/B starten und direkt in Ableton springen</span></div>
+      </div>
+      <div class="coachStrip">
+        <strong data-i18n="coachExampleTitle">Beispiel-Coaching</strong>
+        <span data-i18n="coachExampleText">„Trilian mid und Trilian sub konkurrieren bei 90–250 Hz. Entscheide, welcher Track in dieser Phase die Führung haben soll.“</span>
+      </div>
+    </div>
+    <div class="productStack">
+      <figure class="productShot">
+        <img src="assets/mix-decisions.webp" alt="TrackLens Mix-Entscheidung mit konkretem Hörziel und A/B-Aktion" loading="lazy">
+        <figcaption class="caption" data-i18n="mixDecisionCaption">Mix-Entscheidung: konkreter Konflikt, Hörziel und A/B-Aktion an derselben Stelle.</figcaption>
+      </figure>
+      <figure class="productShot">
+        <img src="assets/mix.webp" alt="TrackLens Frequenz-Freiraum nach Songabschnitt" loading="lazy">
+        <figcaption class="caption" data-i18n="mixSpaceCaption">Frequenz-Freiraum: Belegung und Masking pro Songphase statt nur als globale Kurve.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="feature">
+    <div class="featureCopy">
+      <div class="section-kicker" data-i18n="preKicker">Pre-Master & Export-Check</div>
+      <h3 data-i18n="preTitle">Vor dem Export wissen, was du noch bewusst prüfen solltest.</h3>
+      <p data-i18n="preText">TrackLens nutzt seine relativen Live-Messungen für einen hörbasierten Pre-Master-Check. Es behauptet bewusst nicht, LUFS, True Peak oder Release-Readiness zu messen, wenn dafür kein echter Mastering-Meter vorhanden ist.</p>
+      <div class="points">
+        <div class="point"><b>✓</b><span data-i18n="preP1">Auffällige relative Peak-Präsenz und FX-/Bus-Kandidaten</span></div>
+        <div class="point"><b>✓</b><span data-i18n="preP2">Limiter-, Mono-/Low-End- und Referenz-Checks als Hörliste</span></div>
+        <div class="point"><b>✓</b><span data-i18n="preP3">Keine falsche LUFS- oder True-Peak-Freigabe</span></div>
+      </div>
+    </div>
+    <figure class="productShot">
+      <img src="assets/premaster.webp" alt="TrackLens Pre-Master-Ansicht mit priorisierten Export-Checks" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="feature reverse">
+    <div class="featureCopy">
+      <div class="section-kicker" data-i18n="houseKicker">Housekeeping & Naming</div>
+      <h3 data-i18n="houseTitle">Ordnung schaffen, ohne dass der Coach einfach umbenennt.</h3>
+      <p data-i18n="houseText">TrackLens schlägt konsistente Track- und Clipnamen aus Rollen, Gruppen und Arrangement-Kontext vor. Die Vorschläge bleiben editierbar und werden erst nach deiner Auswahl geschrieben.</p>
+      <div class="points">
+        <div class="point"><b>✓</b><span data-i18n="houseP1">Tracknamen als klare Rollen sichtbar machen</span></div>
+        <div class="point"><b>✓</b><span data-i18n="houseP2">Clipnamen optional an Track und Abschnitt koppeln</span></div>
+        <div class="point"><b>✓</b><span data-i18n="houseP3">Auswahl prüfen, anwenden und letzte Umbenennung rückgängig machen</span></div>
+      </div>
+    </div>
+    <figure class="productShot">
+      <img src="assets/housekeeping.webp" alt="TrackLens Housekeeping und Naming mit editierbaren Track- und Clipnamen" loading="lazy">
+      <figcaption class="caption" data-i18n="houseCaption">Vorschau zuerst: Track- und Clipnamen werden nur nach expliziter Auswahl geändert.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="how">
+  <div class="sectionHead">
+    <div class="section-kicker" data-i18n="workflowKicker">Workflow</div>
+    <h2 data-i18n="workflowTitle">Vom Live Set zur nächsten Hörentscheidung.</h2>
+  </div>
+  <div class="workflow">
+    <div class="step"><strong data-i18n="step1Title">1. Arrangement prüfen</strong><span data-i18n="step1Text">Clips, Rollen, Phasengrenzen und strukturelle Veränderungen lokal lesen.</span></div>
+    <div class="step"><strong data-i18n="step2Title">2. Pegel + Spektrum messen</strong><span data-i18n="step2Text">Den relevanten Songbereich abspielen und reale relative Trackdaten erfassen.</span></div>
+    <div class="step"><strong data-i18n="step3Title">3. Prioritäten hören</strong><span data-i18n="step3Text">Die wichtigsten Mix-, Fokus- und Dramaturgie-Fragen zuerst prüfen.</span></div>
+    <div class="step"><strong data-i18n="step4Title">4. A/B in Ableton</strong><span data-i18n="step4Text">Zur Stelle springen, vergleichen und nur bewusst bestätigte Änderungen anwenden.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="safe">
+    <div>
+      <div class="section-kicker" data-i18n="safeKicker">Sicherheitsprinzip</div>
+      <h2 data-i18n="safeTitle">Analyse ohne Kontrollverlust.</h2>
+      <p class="sub" data-i18n="safeSub">Der Analysepfad ist lokal, deterministisch und read-only. TrackLens navigiert und misst, aber verändert nicht stillschweigend deine Musik.</p>
+    </div>
+    <div class="safeBox">
+      <h3 data-i18n="safeBoxTitle">Local · Read-only default · Deterministic</h3>
+      <div class="check"><b>✓</b><span data-i18n="safe1">Clips, MIDI, Devices, Automation und Mixerwerte bleiben im Analysepfad unangetastet.</span></div>
+      <div class="check"><b>✓</b><span data-i18n="safe2">Navigation darf Ansicht, Track-Auswahl, Playhead, Loop und Transport bewegen.</span></div>
+      <div class="check"><b>✓</b><span data-i18n="safe3">Housekeeping und Coach Gain schreiben nur nach expliziter Bestätigung.</span></div>
+      <div class="check"><b>✓</b><span data-i18n="safe4">Keine Cloud-Pflicht und kein Upload des Live Sets für die Analyse.</span></div>
+    </div>
+  </div>
+  <div class="limitBox" style="margin-top:18px">
+    <h3 data-i18n="limitsTitle">Was TrackLens bewusst nicht vorgibt</h3>
+    <p data-i18n="limitsText">Kein „dein Track ist 82/100“, keine starre Genre-Schablone und keine Mastering-Freigabe aus ungeeigneten Messwerten. Der Coach markiert Evidenz, Unsicherheit und Hörentscheidungen getrennt.</p>
+  </div>
+</section>
+
+<section id="beta">
+  <div class="betaBox">
+    <div>
+      <div class="section-kicker" data-i18n="betaKicker">Private Beta</div>
+      <h2 data-i18n="betaTitle">Teste TrackLens mit echten Projekten.</h2>
+      <p class="sub" data-i18n="betaSub">Gesucht sind Ableton-Produzent:innen, die den Coach an realen unfertigen Tracks testen und melden, welche Empfehlungen hilfreich, falsch oder unnötig sind.</p>
+      <p class="muted small" data-i18n="betaFit">Aktuell am besten geeignet: elektronische Musik, Windows 10/11 und Ableton Live 12. Der Beta-Zugang ist während der ersten Validierungsrunde kostenlos.</p>
+      <div class="badgeRow">
+        <span class="badge" data-i18n="badge1">Arrangement</span>
+        <span class="badge" data-i18n="badge2">Mix & Masking</span>
+        <span class="badge" data-i18n="badge3">Pre-Master</span>
+        <span class="badge" data-i18n="badge4">Housekeeping</span>
+      </div>
+      <div class="actions" style="justify-content:flex-start">
+        <a class="cta" href="https://github.com/beatcode/blank-app/issues/new?template=beta-access.yml" data-i18n="betaCta">Beta-Zugang anfragen</a>
+      </div>
+    </div>
+    <div>
+      <div class="slots">30</div>
+      <strong data-i18n="places">Founding-Beta-Plätze</strong>
+      <p class="muted small" data-i18n="betaNote">Anfragen laufen in dieser technischen Beta über GitHub. Bitte keine E-Mail-Adresse oder privaten Projektdateien in das öffentliche Issue schreiben.</p>
+    </div>
+  </div>
+</section>
+
+<footer data-i18n="footer"><strong>TrackLens</strong> ist ein unabhängiges Produkt und weder mit Ableton AG verbunden noch von Ableton AG unterstützt. Ableton und Live sind Marken der Ableton AG. Produktname, Funktionen und Beta-Umfang können sich während der Validierung ändern.</footer>
+</div>
+
+<script src="assets/site.js?v=2"></script>
+</body>
+</html>
