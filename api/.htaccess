@@ -1,0 +1,9 @@
+Options -Indexes
+
+<FilesMatch "^_">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sqlite|sqlite3|env)$">
+  Require all denied
+</FilesMatch>
