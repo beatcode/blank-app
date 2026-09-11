@@ -1,0 +1,7 @@
+.env
+.env.*.local
+*.sqlite
+*.sqlite3
+/private/
+/vendor/
+.DS_Store
